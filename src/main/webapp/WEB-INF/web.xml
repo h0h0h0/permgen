@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:org/codehaus/xfire/spring/xfire.xml
+		</param-value>
+	</context-param>
+
+	<!-- WSDL endpoint -->
+
+	<context-param>
+		<param-name>OnDemandProWebEndpoint</param-name>
+		<param-value>https://ws2.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL</param-value>
+	</context-param>
+	
+	<!-- Default address layout configuration -->
+	
+	<context-param>
+		<param-name>OnDemandProWebLayout</param-name>
+		<param-value>QADefault</param-value>
+	</context-param>
+	
+	<!-- Optional dataset specific layouts - add one per dataset as necessary -->
+	
+	<!--
+	<context-param>
+		<param-name>GBR</param-name>
+		<param-value>QADefault</param-value>
+	</context-param>
+	-->
+	
+	<!-- Web service authentication -->
+	
+	<context-param>
+		<param-name>AuthenticationUsername</param-name>
+		<param-value>USER</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>AuthenticationPassword</param-name>
+		<param-value>PASS</param-value>
+	</context-param>
+	
+	<!-- Optional proxy settings -->
+	
+	<context-param>
+		<param-name>HttpProxyHost</param-name>
+		<param-value>PROXY</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>HttpProxyPort</param-name>
+		<param-value>8080</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>HttpProxyUser</param-name>
+		<param-value>proxyuser</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>HttpProxyPass</param-name>
+		<param-value>proxypassword</param-value>
+	</context-param>
+	
+	<!-- Controller configuration -->
+	
+	<servlet>
+		<servlet-name>OnDemandProWebController</servlet-name>
+		<servlet-class>
+			com.qas.newmedia.internet.ondemand.product.proweb.servlet.Controller
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OnDemandProWebController</servlet-name>
+		<url-pattern>/OnDemandProWebController</url-pattern>
+	</servlet-mapping>
+
+</web-app>

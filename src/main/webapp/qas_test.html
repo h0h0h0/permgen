@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<title>QAS AJAX Code</title>
+	
+	<link rel="stylesheet" type="text/css" href="jquery/css/qas/jquery-ui-1.8.6.custom.css" />
+	<link rel="stylesheet" type="text/css" href="qas.css" />
+	<script type="text/javascript" src="jquery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="jquery/js/jquery-ui-1.8.6.custom.min.js"></script>
+	<script type="text/javascript" src="qas.js"></script>
+	
+		<!--[if IE]><!-->
+		<style type="text/css">
+		
+			.width
+			{
+				width: 1300px;
+			}
+			
+			fieldset 
+			{  
+				width: 400px;    
+				margin-left: -1em;	
+				margin-top 4em;			
+				padding-left: .25em;
+				padding-right: 1em;
+				border-style: none;        
+				border: 1px solid #BFBAB0;    
+				background-color: #F2EFE9;
+				display: inline;
+				position: relative;
+			}  
+			
+			.first
+			{
+				margin-left: 3em;
+			}
+			
+			legend 
+			{  
+				position: relative;    
+				left: -7px;    
+				top: -0.75em;  
+				margin-left: 1em;  
+				color: #000000;  
+				font-weight: bold;  
+			} 
+			
+			fieldset ol 
+			{  
+				/*padding: 1em 1em 0 1em; */
+				padding-top: 0.25em;
+				list-style: none;  
+			}  
+			
+			fieldset li 
+			{  
+				padding-bottom: 1em;  
+			}  
+			
+			
+			label 
+			{    
+				float: left;    
+				width: 5em;    
+				margin-right: 1em; 
+			}
+			
+			h1
+			{
+				margin-left: 3em;
+			}
+			
+			#subButton
+			{
+				margin-left: 6em;
+			}
+		</style>
+	<!--<![endif]-->
+	
+	<!--[if !IE]><!-->
+		<style type="text/css">
+		
+			body
+			{
+				width: 1200px;
+			}
+			
+			fieldset 
+			{  
+	   
+				width: 350px;    
+				margin-left: -1em;	
+				margin-top 3em;			
+				padding-left: 1em;
+				padding-right: 1em;
+				border-style: none;        
+				border: 1px solid #BFBAB0;    
+				background-color: #F2EFE9;
+				display: inline;
+			}  
+			
+			.first
+			{
+				margin-left: 3em;
+			}
+			
+			legend 
+			{  
+				margin-left: 1em;  
+				color: #000000;  
+				font-weight: bold;  
+			}  
+			
+			fieldset ol 
+			{  
+				padding: 1em 1em 0 1em;  
+				list-style: none;  
+			}  
+			
+			fieldset li 
+			{  
+				padding-bottom: 1em;  
+			}  
+			
+			
+			label 
+			{    
+				float: left;    
+				width: 5em;    
+				margin-right: 1em; 
+			}
+			
+			h1
+			{
+				margin-left: 3em;
+			}
+			
+			#subButton
+			{
+				margin-left: 6em;
+			}
+		</style>
+	<!--<![endif]-->
+	
+	<script type="text/javascript">
+		function clearforms()
+		{
+			$('input:text').val("");
+		}
+	</script>
+	
+</head>
+
+<body>
+	<div class="width">
+		<h1>QAS Best Practices AJAX Sample Code</h1>
+
+		<fieldset class="first">
+			<legend>Address</legend> 
+			<ol>
+				<li>
+					<label for="add1">Address 1:</label>
+					<input id="add1" type="text" size="30" />
+				</li>
+				<li>
+					<label for="add2">Address 2:</label>
+					<input id="add2" type="text" size="30" />
+				</li>
+				<li>
+					<label for="add3">Address 3:</label>
+					<input id="add3" type="text" size="30" />
+				</li>
+				<li>
+					<label for="city">City:</label>
+					<input id="city" type="text" size="30" />
+				</li>
+				<li>
+					<label for="state">State:</label>
+					<input id="state" type="text" size="2" />
+				</li>
+				<li>
+					<label for="zip">Zip:</label>
+					<input id="zip" type="text" size="10" />
+				</li>
+				<li>
+					<label for="country">Country</label>
+					<select id="country">
+						<option value="USA" selected>United States</option>
+						<option value="CAN">Canada</option>
+					</select>
+				</li>
+			</ol>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Billing</legend> 
+			<ol>
+				<li>
+					<label for="billadd1">Address 1:</label>
+					<input id="billadd1" type="text" size="30" />
+				</li>
+				<li>
+					<label for="billadd2">Address 2:</label>
+					<input id="billadd2" type="text" size="30" />
+				</li>
+				<li>
+					<label for="billadd3">Address 3:</label>
+					<input id="billadd3" type="text" size="30" />
+				</li>
+				<li>
+					<label for="billcity">City:</label>
+					<input id="billcity" type="text" size="30" />
+				</li>
+				<li>
+					<label for="billstate">State:</label>
+					<input id="billstate" type="text" size="2" />
+				</li>
+				<li>
+					<label for="billzip">Zip:</label>
+					<input id="billzip" type="text" size="10" />
+				</li>
+				<li>
+					<label for="billcountry">Country</label>
+					<select id="billcountry">
+						<option value="USA" selected>United States</option>
+						<option value="CAN">Canada</option>
+					</select>
+				</li>
+			</ol>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Alternate</legend> 
+			<ol>
+				<li>
+					<label for="altadd1">Address 1:</label>
+					<input id="altadd1" type="text" size="30" />
+				</li>
+				<li>
+					<label for="altadd2">Address 2:</label>
+					<input id="altadd2" type="text" size="30" />
+				</li>
+				<li>
+					<label for="altadd3">Address 3:</label>
+					<input id="altadd3" type="text" size="30" />
+				</li>
+				<li>
+					<label for="altcity">City:</label>
+					<input id="altcity" type="text" size="30" />
+				</li>
+				<li>
+					<label for="altstate">State:</label>
+					<input id="altstate" type="text" size="2" />
+				</li>
+				<li>
+					<label for="altzip">Zip:</label>
+					<input id="altzip" type="text" size="10" />
+				</li>
+				<li>
+					<label for="altcountry">Country</label>
+					<select id="altcountry">
+						<option value="USA" selected>United States</option>
+						<option value="CAN">Canada</option>
+					</select>
+				</li>
+			</ol>
+		</fieldset>
+
+		<br /><br />
+		<input id="subButton" type="button" value="Submit" onclick="QAS_Verify()"/>
+		<input id="clear" type="button" value="Clear" onclick="clearforms()" />
+	</div>
+	
+</body>
+
+</html>
+
